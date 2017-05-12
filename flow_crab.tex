@@ -1,0 +1,73 @@
+\RequirePackage{luatex85}
+\documentclass[tikz]{standalone}
+
+\input{preamble}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node (user) {
+    \begin{tikzpicture}[scale=.3]
+      % \begin{scope}
+      %   \clip (-1, 0) rectangle (1, 2.5);
+      %   \draw[fill=black] (0, 0) circle (1);
+      % \end{scope}
+      \draw[fill=black] plot [smooth cycle, tension=1] coordinates
+        {(-1, 0) (0, 1) (1, 0) (0, -.5)};
+      \draw[fill=black,draw=white,thick] (0, 1.4) circle (.7);
+    \end{tikzpicture}
+  };
+  \node[component,below=of user] (front) {Frontend};
+  \node[component,below=5mm of front] (data) {Data Discovery};
+  \node[component,below=5mm of data] (split) {Splitting};
+  \node[component,below=5mm of split] (creat) {DAG setup};
+  \node[component,below=of creat] (dag) {Condor DAGMan};
+
+  \node[prejob,right=of dag] (pre) {Prejob};
+  \node[mainjob,anchor=west] (job) at (pre.east) {Job};
+  \node[postjob,anchor=west] (post) at (job.east) {Postjob};
+
+  \node[prejob,below=3mm of pre] (pre2) {Prejob};
+  \node[mainjob,anchor=west] (job2) at (pre2.east) {Job};
+  \node[postjob,anchor=west] (post2) at (job2.east) {Postjob};
+
+  \node[prejob,below=3mm of pre2] (pre3) {Prejob};
+  \node[mainjob,anchor=west] (job3) at (pre3.east) {Job};
+  \node[postjob,anchor=west] (post3) at (job3.east) {Postjob};
+
+  % Separation lines
+  \draw[thick,dotted] ($($(user)!0.5!(front)$) - (5,0)$) -- ++(15, 0)
+    node[above,at start,anchor=south west,font=\footnotesize] {User}
+    node[below,at start,anchor=north west,font=\footnotesize] {CRAB3 server};
+  \draw[thick,dotted] ($($(creat)!0.5!(dag)$) - (5,0)$) -- ++(15, 0)
+    node[above,at start,anchor=south west,font=\footnotesize] {CRAB3 server}
+    node[below,at start,anchor=north west,font=\footnotesize] {Grid scheduler};
+
+  \node[dag,fit=(pre) (post3)] (dg) {};
+  \node[daglabel] at (dg.north) {DAG};
+
+  % Flow
+  \draw[->] (user) -- (front);
+  \draw[->] (front) -- (data);
+  \draw[->] (data) -- (split);
+  \draw[->] (split) -- (creat);
+  \draw[->] (creat) -- (dag);
+
+  \draw[->] (dag) -- (pre);
+  \draw[shorten <=0,->] ($(dag.east)!.5!(pre.west)$) |- (pre2);
+  \draw[shorten <=0,->] ($(dag.east)!.5!(pre.west)$) |- (pre3);
+  % \draw[dashed] ($(dag.east)!.5!(pre.west)$)
+
+  % Dry-run
+  % \draw[->] (creat) -- ++(-2, 0) |- (user);
+  \node[optional,component,right=35mm of user] (dry) {Dry-run};
+
+  \draw[optional,->] (creat) -| (dry);
+  \draw[optional,->] (dry) -- (user)
+    node[optional,above,midway,font=\footnotesize] {estimates};
+
+  \draw[optional,<-] (creat) -- +(-2.5,0) |- (user)
+    node[optional,sloped,above,near start,font=\footnotesize] {confirmation};
+\end{tikzpicture}
+
+\end{document}
