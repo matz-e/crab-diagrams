@@ -1,0 +1,63 @@
+\usetikzlibrary{arrows,calc,fit,positioning}
+
+\tikzset{
+  >=latex,
+  every path/.style={
+    shorten <=2pt,shorten >=2pt,>=stealth
+  },
+  component/.style={
+    rectangle,rounded corners,draw=black,
+    minimum width=4cm,
+    minimum height=8mm
+  },
+  dag/.style={
+    component,draw=gray,line width=2pt,
+    inner sep=3mm,
+  },
+  daglabel/.style={
+    fill=white,
+    font=\footnotesize
+  },
+  prejob/.style={
+    draw,
+    minimum width=18mm,
+    minimum height=6mm,
+    font=\footnotesize,
+    % append after command={
+    %   \pgfextra
+    %   \draw[shorten <=0pt, shorten >=0pt,black,rounded corners]%
+    %   (\tikzlastnode.south east)%
+    %     -- (\tikzlastnode.south)%
+    %     -| (\tikzlastnode.west)%
+    %     |- (\tikzlastnode.north)%
+    %     -- (\tikzlastnode.north east);
+    %   \endpgfextra
+    % }
+  },
+  postjob/.style={
+    draw,
+    minimum width=18mm,
+    minimum height=6mm,
+    font=\footnotesize,
+    % append after command={
+    %   \pgfextra
+    %   \draw[shorten <=0pt, shorten >=0pt,black,rounded corners]%
+    %   (\tikzlastnode.north west)%
+    %     -- (\tikzlastnode.north)%
+    %     -| (\tikzlastnode.east)%
+    %     |- (\tikzlastnode.south)%
+    %     -- (\tikzlastnode.south west);
+    %   \endpgfextra
+    % }
+  },
+  mainjob/.style={
+    component,
+    rounded corners=0,
+    minimum height=6mm,
+    minimum width=25mm,
+    font=\footnotesize,
+  },
+  optional/.style={
+    dashed
+  }
+}
