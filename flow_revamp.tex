@@ -33,7 +33,7 @@
   \node[dag,inner sep=5mm,fit=(tail1-1-pre) (tail1-5-post)] (tail1dag) {};
   \node[daglabel] (tail1daglabel) at (tail1dag.north) {Tail DAG 1};
 
-  \node[matrix,row sep=3mm,right=of t1] (t2) {
+  \node[matrix,row sep=3mm,right=20mm of t1] (t2) {
     \node[mainjob] (tail2-1-job) {Tail Job};
     \node[prejob,anchor=east] (tail2-1-pre) at (tail2-1-job.west) {Prejob};
     \node[postjob,anchor=west] (tail2-1-post) at (tail2-1-job.east) {Postjob};
