@@ -1,0 +1,11 @@
+executable     = /bin/bash
+universe       = vanilla
+request_cpus   = 1
+request_memory = 1
+input          = probe.sh
+arguments      = probe.sh
+output         = job.$(count).out
+error          = job.$(count).err
+log            = job.$(count).log
+
+queue

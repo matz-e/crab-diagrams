@@ -1,0 +1,13 @@
+NODE_STATUS_FILE node_state
+
+JOB job0-1 job.0.submit
+VARS job0-1 count="0-1"
+
+JOB job0-2 job.0.submit
+VARS job0-2 count="0-2"
+
+JOB job0-3 job.0.submit
+VARS job0-3 count="0-3"
+
+SUBDAG EXTERNAL final_node processing.dag
+SCRIPT DEFER 4 10 PRE final_node filldag.sh
