@@ -6,27 +6,27 @@
 
 \begin{document}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[show background rectangle]
   \node[matrix,row sep=3mm] (t1) {
     \node[mainjob] (tail1-1-job) {Tail Job};
-    \node[prejob,anchor=east] (tail1-1-pre) at (tail1-1-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail1-1-post) at (tail1-1-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail1-1-pre) at (tail1-1-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail1-1-post) at (tail1-1-job.east) {PostJob};
     \\
     \node[mainjob] (tail1-2-job) {Tail Job};
-    \node[prejob,anchor=east] (tail1-2-pre) at (tail1-2-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail1-2-post) at (tail1-2-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail1-2-pre) at (tail1-2-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail1-2-post) at (tail1-2-job.east) {PostJob};
     \\
     \node[mainjob] (tail1-3-job) {Tail Job};
-    \node[prejob,anchor=east] (tail1-3-pre) at (tail1-3-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail1-3-post) at (tail1-3-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail1-3-pre) at (tail1-3-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail1-3-post) at (tail1-3-job.east) {PostJob};
     \\
     \node[mainjob] (tail1-4-job) {Tail Job};
-    \node[prejob,anchor=east] (tail1-4-pre) at (tail1-4-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail1-4-post) at (tail1-4-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail1-4-pre) at (tail1-4-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail1-4-post) at (tail1-4-job.east) {PostJob};
     \\
     \node[mainjob] (tail1-5-job) {Tail Job};
-    \node[prejob,anchor=east] (tail1-5-pre) at (tail1-5-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail1-5-post) at (tail1-5-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail1-5-pre) at (tail1-5-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail1-5-post) at (tail1-5-job.east) {PostJob};
     \\
   };
 
@@ -35,24 +35,24 @@
 
   \node[matrix,row sep=3mm,right=20mm of t1] (t2) {
     \node[mainjob] (tail2-1-job) {Tail Job};
-    \node[prejob,anchor=east] (tail2-1-pre) at (tail2-1-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail2-1-post) at (tail2-1-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail2-1-pre) at (tail2-1-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail2-1-post) at (tail2-1-job.east) {PostJob};
     \\
     \node[mainjob] (tail2-2-job) {Tail Job};
-    \node[prejob,anchor=east] (tail2-2-pre) at (tail2-2-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail2-2-post) at (tail2-2-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail2-2-pre) at (tail2-2-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail2-2-post) at (tail2-2-job.east) {PostJob};
     \\
     \node[mainjob] (tail2-3-job) {Tail Job};
-    \node[prejob,anchor=east] (tail2-3-pre) at (tail2-3-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail2-3-post) at (tail2-3-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail2-3-pre) at (tail2-3-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail2-3-post) at (tail2-3-job.east) {PostJob};
     \\
     \node[mainjob] (tail2-4-job) {Tail Job};
-    \node[prejob,anchor=east] (tail2-4-pre) at (tail2-4-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail2-4-post) at (tail2-4-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail2-4-pre) at (tail2-4-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail2-4-post) at (tail2-4-job.east) {PostJob};
     \\
     \node[mainjob] (tail2-5-job) {Tail Job};
-    \node[prejob,anchor=east] (tail2-5-pre) at (tail2-5-job.west) {Prejob};
-    \node[postjob,anchor=west] (tail2-5-post) at (tail2-5-job.east) {Postjob};
+    \node[prejob,anchor=east] (tail2-5-pre) at (tail2-5-job.west) {PreJob};
+    \node[postjob,anchor=west] (tail2-5-post) at (tail2-5-job.east) {PostJob};
     \\
   };
 
@@ -67,42 +67,42 @@
   \node[matrix,column sep=10mm,above=20mm of t12] (p) {
     \begin{scope}
       \node[mainjob] (job) {Processing Job};
-      \node[prejob,anchor=east] (pre) at (job.west) {Prejob};
-      \node[postjob,anchor=west] (post) at (job.east) {Postjob};
+      \node[prejob,anchor=east] (pre) at (job.west) {PreJob};
+      \node[postjob,anchor=west] (post) at (job.east) {PostJob};
 
-      \node[prejob,below=3mm of pre] (pre2) {Prejob};
+      \node[prejob,below=3mm of pre] (pre2) {PreJob};
       \node[mainjob,anchor=west] (job2) at (pre2.east) {Processing Job};
-      \node[postjob,anchor=west] (post2) at (job2.east) {Postjob};
+      \node[postjob,anchor=west] (post2) at (job2.east) {PostJob};
 
-      \node[prejob,below=3mm of pre2] (pre3) {Prejob};
+      \node[prejob,below=3mm of pre2] (pre3) {PreJob};
       \node[mainjob,anchor=west] (job3) at (pre3.east) {Processing Job};
-      \node[postjob,anchor=west] (post3) at (job3.east) {Postjob};
+      \node[postjob,anchor=west] (post3) at (job3.east) {PostJob};
     \end{scope}
     &
 
     \begin{scope}
-      \node[prejob] (tdagfill1-pre) {Prejob};
+      \node[prejob] (tdagfill1-pre) {PreDAG};
       \node[mainjob,anchor=west] (tdagfill1) at (tdagfill1-pre.east) {Tail DAG 1};
 
       \node[small component,below=10mm of tdagfill1-pre] (t1split) {Splitting};
       \node[small component,below=5mm of t1split] (t1creat) {DAG setup};
 
-      \draw[->] (tdagfill1-pre) -- (t1split) node [midway,right,font=\tiny,text width=20mm] {\SI{50}{\percent} job \\ completion};
+      \draw[->] (tdagfill1-pre) -- (t1split) node [midway,right,note,text width=20mm] {\SI{50}{\percent} job \\ completion};
       \draw[->] (t1split) -- (t1creat);
-      \draw[->] (t1creat) -| ($(tdagfill1.south) - (1mm,0)$) node [near end,above,sloped,font=\tiny] {fill DAG};
+      \draw[->] (t1creat) -| ($(tdagfill1.south) - (1mm,0)$) node [near end,above,sloped,note] {fill DAG};
     \end{scope}
     &
 
     \begin{scope}
-      \node[prejob] (tdagfill2-pre) {Prejob};
+      \node[prejob] (tdagfill2-pre) {PreDAG};
       \node[mainjob,anchor=west] (tdagfill2) at (tdagfill2-pre.east) {Tail DAG 2};
 
       \node[small component,below=10mm of tdagfill2-pre] (t2split) {Splitting};
       \node[small component,below=5mm of t2split] (t2creat) {DAG setup};
 
-      \draw[->] (tdagfill2-pre) -- (t2split) node [midway,right,font=\tiny,text width=20mm] {\SI{100}{\percent} job \\ completion};
+      \draw[->] (tdagfill2-pre) -- (t2split) node [midway,right,note,text width=20mm] {\SI{100}{\percent} job \\ completion};
       \draw[->] (t2split) -- (t2creat);
-      \draw[->] (t2creat) -| ($(tdagfill2.south) - (1mm,0)$) node [near end,above,sloped,font=\tiny] {fill DAG};
+      \draw[->] (t2creat) -| ($(tdagfill2.south) - (1mm,0)$) node [near end,above,sloped,note] {fill DAG};
     \end{scope}
     \\
   };
@@ -121,29 +121,29 @@
   \node[matrix,column sep=10mm,above=20mm of p] {
     \begin{scope}
       \node[mainjob] (probe1-job) {Probe Job};
-      \node[prejob,anchor=east] (probe1-pre) at (probe1-job.west) {Prejob};
-      \node[postjob,anchor=west] (probe1-post) at (probe1-job.east) {Postjob};
+      \node[prejob,anchor=east] (probe1-pre) at (probe1-job.west) {PreJob};
+      \node[postjob,anchor=west] (probe1-post) at (probe1-job.east) {PostJob};
 
       \node[mainjob,below=3mm of probe1-job] (probe2-job) {Probe Job};
-      \node[prejob,anchor=east] (probe2-pre) at (probe2-job.west) {Prejob};
-      \node[postjob,anchor=west] (probe2-post) at (probe2-job.east) {Postjob};
+      \node[prejob,anchor=east] (probe2-pre) at (probe2-job.west) {PreJob};
+      \node[postjob,anchor=west] (probe2-post) at (probe2-job.east) {PostJob};
 
       \node[mainjob,below=3mm of probe2-job] (probe3-job) {Probe Job};
-      \node[prejob,anchor=east] (probe3-pre) at (probe3-job.west) {Prejob};
-      \node[postjob,anchor=west] (probe3-post) at (probe3-job.east) {Postjob};
+      \node[prejob,anchor=east] (probe3-pre) at (probe3-job.west) {PreJob};
+      \node[postjob,anchor=west] (probe3-post) at (probe3-job.east) {PostJob};
 
       \node[mainjob,below=3mm of probe3-job] (probe4-job) {Probe Job};
-      \node[prejob,anchor=east] (probe4-pre) at (probe4-job.west) {Prejob};
-      \node[postjob,anchor=west] (probe4-post) at (probe4-job.east) {Postjob};
+      \node[prejob,anchor=east] (probe4-pre) at (probe4-job.west) {PreJob};
+      \node[postjob,anchor=west] (probe4-post) at (probe4-job.east) {PostJob};
 
       \node[mainjob,below=3mm of probe4-job] (probe5-job) {Probe Job};
-      \node[prejob,anchor=east] (probe5-pre) at (probe5-job.west) {Prejob};
-      \node[postjob,anchor=west] (probe5-post) at (probe5-job.east) {Postjob};
+      \node[prejob,anchor=east] (probe5-pre) at (probe5-job.west) {PreJob};
+      \node[postjob,anchor=west] (probe5-post) at (probe5-job.east) {PostJob};
     \end{scope}
     &
 
     \begin{scope}
-      \node[prejob] (pdagfill-pre) {Prejob};
+      \node[prejob] (pdagfill-pre) {PreDAG};
       \node[mainjob,anchor=west] (pdagfill) at (pdagfill-pre.east) {Processing DAG};
 
       \node[small component,below=10mm of pdagfill-pre] (psplit) {Splitting};
@@ -155,9 +155,9 @@
   \node[dag,inner sep=5mm,fit=(probe1-pre) (probe5-post) (pcreat) (pdagfill)] (probedag) {};
   \node[daglabel] (probedaglabel) at (probedag.north) {Probe DAG};
 
-  \draw[->] (pdagfill-pre) -- (psplit) node [midway,right,font=\tiny,text width=20mm] {\SI{100}{\percent} probe \\ completion};
+  \draw[->] (pdagfill-pre) -- (psplit) node [midway,right,note,text width=20mm] {\SI{100}{\percent} probe \\ completion};
   \draw[->] (psplit) -- (pcreat);
-  \draw[->] (pcreat) -| ($(pdagfill.south) - (1mm,0)$) node [near end,above,sloped,font=\tiny] {fill DAG};
+  \draw[->] (pcreat) -| ($(pdagfill.south) - (1mm,0)$) node [near end,above,sloped,note] {fill DAG};
 
   \node[component,above=of probedag] (dagm) {Condor DAGMan};
 

@@ -5,27 +5,27 @@
 
 \begin{document}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[show background rectangle]
   \node[component] (dagm) {Condor DAGMan};
 
   \node[mainjob,below=of dagm] (probe-job) {Probe Job};
-  \node[prejob,anchor=east] (probe-pre) at (probe-job.west) {Prejob};
-  \node[postjob,anchor=west] (probe-post) at (probe-job.east) {Postjob};
+  \node[prejob,anchor=east] (probe-pre) at (probe-job.west) {PreJob};
+  \node[postjob,anchor=west] (probe-post) at (probe-job.east) {PostJob};
 
   \node[component,below=5mm of probe-post] (split) {Splitting};
   \node[component,below=5mm of split] (creat) {DAG setup};
 
-  \node[prejob,right=of creat] (pre) {Prejob};
+  \node[prejob,right=of creat] (pre) {PreJob};
   \node[mainjob,anchor=west] (job) at (pre.east) {Job};
-  \node[postjob,anchor=west] (post) at (job.east) {Postjob};
+  \node[postjob,anchor=west] (post) at (job.east) {PostJob};
 
-  \node[prejob,below=3mm of pre] (pre2) {Prejob};
+  \node[prejob,below=3mm of pre] (pre2) {PreJob};
   \node[mainjob,anchor=west] (job2) at (pre2.east) {Job};
-  \node[postjob,anchor=west] (post2) at (job2.east) {Postjob};
+  \node[postjob,anchor=west] (post2) at (job2.east) {PostJob};
 
-  \node[prejob,below=3mm of pre2] (pre3) {Prejob};
+  \node[prejob,below=3mm of pre2] (pre3) {PreJob};
   \node[mainjob,anchor=west] (job3) at (pre3.east) {Job};
-  \node[postjob,anchor=west] (post3) at (job3.east) {Postjob};
+  \node[postjob,anchor=west] (post3) at (job3.east) {PostJob};
 
   \node[dag,fit=(pre) (post3)] (subdag) {};
   \node[daglabel] at (subdag.north) {SubDAG};

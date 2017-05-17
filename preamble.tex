@@ -1,12 +1,16 @@
-\usetikzlibrary{arrows,calc,fit,positioning}
+\usetikzlibrary{arrows,calc,fit,positioning,backgrounds}
 
 \usepackage{fontspec}
-\setmainfont{Fira Sans}
+\setmainfont{Source Sans Pro}
 
 \tikzset{
   >=latex,
   every path/.style={
     shorten <=2pt,shorten >=2pt,>=stealth
+  },
+  background rectangle/.style={fill=white},
+  note/.style={
+    font=\scriptsize
   },
   component/.style={
     rectangle,rounded corners,draw=black,
@@ -15,16 +19,18 @@
   },
   small component/.style={
     component,
-    minimum width=2cm,
+    font=\footnotesize,
+    minimum width=20mm,
+    minimum height=6mm,
   },
   dag/.style={
     component,draw=gray,line width=2pt,
     inner sep=3mm,
   },
   daglabel/.style={
-    draw=gray,line width=1pt,
     fill=white,
-    font=\footnotesize
+    font=\footnotesize,
+    minimum height=6mm
   },
   prejob/.style={
     draw,
