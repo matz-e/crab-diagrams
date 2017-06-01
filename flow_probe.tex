@@ -12,8 +12,8 @@
   \node[prejob,anchor=east] (probe-pre) at (probe-job.west) {PreJob};
   \node[postjob,anchor=west] (probe-post) at (probe-job.east) {PostJob};
 
-  \node[component,below=5mm of probe-post] (split) {Splitting};
-  \node[component,below=5mm of split] (creat) {DAG setup};
+  \node[small component,below=5mm of probe-post] (split) {Splitting};
+  \node[small component,below=5mm of split] (creat) {DAG setup};
 
   \node[prejob,right=of creat] (pre) {PreJob};
   \node[mainjob,anchor=west] (job) at (pre.east) {Job};
