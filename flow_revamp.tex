@@ -87,7 +87,7 @@
       \node[small component,below=10mm of tdagfill1-pre] (t1split) {Splitting};
       \node[small component,below=5mm of t1split] (t1creat) {DAG setup};
 
-      \draw[->] (tdagfill1-pre) -- (t1split) node [midway,right,note,text width=20mm] {\SI{50}{\percent} job \\ completion};
+      \draw[->] (tdagfill1-pre) -- (t1split) node [midway,right,note,text width=20mm] {\SI{90}{\percent} job \\ completion};
       \draw[->] (t1split) -- (t1creat);
       \draw[->] (t1creat) -| ($(tdagfill1.south) - (1mm,0)$) node [near end,above,sloped,note] {fill DAG};
     \end{scope}
